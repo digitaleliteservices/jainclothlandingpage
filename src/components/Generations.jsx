@@ -26,11 +26,7 @@ const Generations = () => {
           {/* Card 1: Men's Wardrobe */}
           <div 
             className="gen-family-card" 
-            onClick={() => openQuickView({
-              title: "Men's Wardrobe",
-              desc: "Fine silk kurtas, Modi sleeveless jackets, ceremonial silk dhotis, and crisp everyday linen white outfits for every family milestone.",
-              image: "/assets/images/gen_grandfather_1790678097286.jpg"
-            })}
+            onClick={() => window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20explore%20your%20Bridal%20Collection.", "_blank")}
           >
             <div className="gen-card-img-wrap">
               <img src="/assets/images/gen_grandfather_1790678097286.jpg" alt="Men's Wardrobe" />

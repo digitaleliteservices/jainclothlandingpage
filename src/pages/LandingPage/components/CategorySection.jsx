@@ -1,37 +1,46 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import WomensCollection from "../../../assets/Serene Jasmine-Adorned Saree Portrait.png"
+import BridalCollection from "../../../assets/Elegant Red and Gold Bridal Lehenga.png"
+import MensCollection from "../../../assets/Three_models_walk_diagonally_2K_20261006104350.jpg"
+import IlkalCollection from "../../../assets/Show_saree_pattern_clearly_2K_20261006103945.jpg"
 
 const categories = [
   {
     title: "Ilkal Sarees",
     desc: "Authentic Chikki Paras & Topi Teni pallu handlooms crafted in Ilkal.",
-    image: "/assets/images/spotlight_ilkal.jpg"
+    image: IlkalCollection,
+    targetId: "heritage"
   },
   {
     title: "Bridal & Ethnic Wear",
     desc: "Regal lehengas, heavy silk drapes & wedding trousseau sets.",
-    image: "/assets/images/cat_bridal_lehenga_1790677826632.jpg"
+    image: BridalCollection,
+    targetId: "moments"
   },
   {
     title: "Women's Collection",
     desc: "Designer sarees, festive kurtis, and contemporary ethnic ensembles.",
-    image: "/assets/images/cat_silk_saree_1790677798480.jpg"
+    image: WomensCollection,
+    targetId: "collections"
   },
   {
     title: "Men's Collection",
     desc: "Royalty-inspired sherwanis, silk kurta sets & designer dhotis.",
-    image: "/assets/images/cat_menswear_1790677869067.jpg"
+    image: MensCollection,
+    targetId: "generations"
   },
   {
     title: "Kids' Collection",
     desc: "Adorable Pattu Langa sets & traditional dhoti clothing for little ones.",
-    image: "/assets/images/cat_kids_1790677909697.jpg"
+    image: "/assets/images/cat_kids_1790677909697.jpg",
+    targetId: "generations"
   }
 ];
 
 const CategorySection = () => {
-  const scrollToFeatured = () => {
-    const el = document.getElementById('landing-featured-section');
+  const handleCategoryClick = (targetId) => {
+    const el = document.getElementById(targetId || 'collections');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -58,7 +67,7 @@ const CategorySection = () => {
             <div 
               key={idx} 
               className="landing-category-card"
-              onClick={scrollToFeatured}
+              onClick={() => handleCategoryClick(cat.targetId)}
             >
               <div className="landing-category-img-wrap">
                 <img src={cat.image} alt={cat.title} />

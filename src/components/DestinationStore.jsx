@@ -3,7 +3,7 @@ import { Store, Compass } from 'lucide-react';
 
 const DestinationStore = () => {
   return (
-    <section className="section-padding destination-section">
+    <section className="section-padding destination-section" id="destination-store">
       <div className="container destination-grid">
         
         {/* Left Column: Store Interior Image & Floating Badge */}
@@ -46,7 +46,7 @@ const DestinationStore = () => {
             Rooted deeply in the handloom capital of Ilkal, Karnataka, our establishment stands as a sanctuary for purists who value real warp-and-weft integrity, genuine gold zari luster, and the timeless dignity of authentic regional craftsmanship.
           </p>
 
-          <a href="#location" className="btn btn-hero-primary" style={{ marginTop: '8px' }}>
+          <a href="#landing-store-section" className="btn btn-hero-primary" style={{ marginTop: '8px' }}>
             <Compass size={15} />
             DISCOVER OUR STORE
           </a>

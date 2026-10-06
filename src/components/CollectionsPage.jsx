@@ -64,12 +64,12 @@ const CollectionsPage = () => {
 
   const openWhatsAppInquiry = (productName) => {
     const text = encodeURIComponent(`Namaste Jain Cloth Centre, I am interested in inquiring about "${productName}".`);
-    window.open(`https://wa.me/919448100000?text=${text}`, '_blank');
+    window.open(`https://wa.me/919353977262?text=${text}`, '_blank');
   };
 
   const openWhatsAppConsultation = () => {
     const text = encodeURIComponent(`Namaste Jain Cloth Centre, I would like to book a WhatsApp video draping session for Ilkal sarees.`);
-    window.open(`https://wa.me/919448100000?text=${text}`, '_blank');
+    window.open(`https://wa.me/919353977262?text=${text}`, '_blank');
   };
 
   // Filter products based on selected Department & Subcategory
@@ -110,7 +110,7 @@ const CollectionsPage = () => {
       <section className="collections-top-subbar">
         <div className="container subbar-container">
           <div className="breadcrumb-nav">
-            <button onClick={() => navigateTo('home')} className="breadcrumb-link">Home</button>
+            <button onClick={() => navigateTo('landing')} className="breadcrumb-link">Home</button>
             <span className="sep">/</span>
             <span className="active">Collections</span>
           </div>
@@ -606,7 +606,7 @@ const CollectionsPage = () => {
               <div className="banner-actions">
                 <button className="btn btn-burgundy-cta" onClick={() => setBulkModalOpen(true)}>
                   <MessageCircle size={15} />
-                  CONNECT ON WHATSAPP (+91 9448100000)
+                  CONNECT ON WHATSAPP (+91 93539 77262)
                 </button>
               </div>
             </div>

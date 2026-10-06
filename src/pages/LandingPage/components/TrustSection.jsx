@@ -4,8 +4,8 @@ import { Award, ShieldCheck, HeartHandshake, Users } from 'lucide-react';
 const trustItems = [
   {
     icon: <Award size={24} />,
-    title: "40+ Years of Trust",
-    desc: "A trusted textile destination since 1978 on Main Bazar Road, Ilkal."
+    title: "50+ Years of Trust",
+    desc: "A trusted textile destination since 1970 on Main Bazar Road, Ilkal."
   },
   {
     icon: <ShieldCheck size={24} />,
@@ -26,7 +26,7 @@ const trustItems = [
 
 const TrustSection = () => {
   return (
-    <section className="landing-section-padding">
+    <section className="landing-section-padding" id="guarantee">
       <div className="landing-container">
         
         <div className="landing-text-center">

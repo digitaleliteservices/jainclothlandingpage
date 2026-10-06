@@ -6,7 +6,7 @@ const BulkOrdersBox = () => {
   const { setBulkModalOpen } = useUI();
 
   const openWhatsAppBulk = () => {
-    window.open("https://wa.me/919876543210?text=Hi%20Jain%20Cloth%20Centre,%20I%20have%20a%20bulk%20order%20inquiry", "_blank");
+    window.open("https://wa.me/919353977262?text=Hi%20Jain%20Cloth%20Centre,%20I%20have%20a%20bulk%20order%20inquiry", "_blank");
   };
 
   return (

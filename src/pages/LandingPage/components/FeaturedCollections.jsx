@@ -1,6 +1,6 @@
 import React from 'react';
 import { useUI } from '../../../context/UIContext';
-import { ArrowRight } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 const featuredItems = [
   {
@@ -98,22 +98,30 @@ const FeaturedCollections = () => {
               </div>
               <div className="landing-featured-body">
                 <h3 className="landing-featured-title">{item.title}</h3>
-                <p className="landing-featured-desc">{item.desc}</p>
-                <button 
+                {/* <p className="landing-featured-desc">{item.desc}</p> */}
+                {/* <button 
                   className="landing-category-cta" 
                   style={{ background: 'none', border: 'none', cursor: 'pointer' }}
                 >
                   <span>Quick View</span>
                   <ArrowRight size={14} />
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
         </div>
 
-        <div style={{ textAlign: 'center', marginTop: '48px' }}>
-          <button className="landing-btn-primary" onClick={scrollToCategories}>
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', marginTop: '48px', flexWrap: 'wrap' }}>
+          <button className="landing-btn-secondary" onClick={scrollToCategories}>
             Explore All Categories
+          </button>
+          <button 
+            className="landing-btn-whatsapp-nav" 
+            onClick={() => window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20enquire%20about%20more%20designs%20from%20your%20curated%20collection.", "_blank")}
+            style={{ padding: '12px 24px', fontSize: '0.9rem' }}
+          >
+            <MessageCircle size={16} />
+            <span>Request Catalog on WhatsApp</span>
           </button>
         </div>
 

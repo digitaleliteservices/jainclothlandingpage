@@ -16,7 +16,7 @@ const HeroSection = () => {
           <div className="landing-hero-text">
             <div className="landing-hero-eyebrow">
               <Sparkles size={14} style={{ color: '#C59B27' }} />
-              <span>JAIN CLOTH CENTRE • EST. 40+ YEARS</span>
+              <span>JAIN CLOTH CENTRE • EST. 50+ YEARS</span>
             </div>
 
             <h1 className="landing-hero-title">
@@ -28,7 +28,7 @@ const HeroSection = () => {
             </p>
 
             <div className="landing-hero-buttons">
-              <button className="landing-btn-primary" onClick={() => scrollToSection('landing-category-section')}>
+              <button className="landing-btn-primary" onClick={() => scrollToSection('collections')}>
                 Explore Collections
               </button>
 
@@ -52,7 +52,7 @@ const HeroSection = () => {
               </div>
               <div>
                 <div className="landing-badge-title">Ilkal Handloom Sanctuary</div>
-                <div className="landing-badge-sub">40+ Years of Craftsmanship</div>
+                <div className="landing-badge-sub">50+ Years of Craftsmanship</div>
               </div>
             </div>
           </div>

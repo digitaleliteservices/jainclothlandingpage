@@ -6,16 +6,18 @@ import LandingNavbar from './components/LandingNavbar';
 import HeroSection from './components/HeroSection';
 import CategorySection from './components/CategorySection';
 import HeritageSection from './components/HeritageSection';
-import FeaturedCollections from './components/FeaturedCollections';
-import BridalSection from './components/BridalSection';
-import MenKidsSection from './components/MenKidsSection';
-import BrandStorySection from './components/BrandStorySection';
+import CollectionsGrid from '../../components/CollectionsGrid';
+import HeritageSarees from '../../components/HeritageSarees';
+import SpecialMoments from '../../components/SpecialMoments';
+import Generations from '../../components/Generations';
+import BulkOrdersBox from '../../components/BulkOrdersBox';
+import DestinationStore from '../../components/DestinationStore';
 import TrustSection from './components/TrustSection';
-import BulkOrderSection from './components/BulkOrderSection';
-import InstagramSection from './components/InstagramSection';
+import GallerySection from './components/GallerySection';
 import StoreSection from './components/StoreSection';
 import FinalCTA from './components/FinalCTA';
 import LandingFooter from './components/LandingFooter';
+import ScrollToTop from './components/ScrollToTop';
 
 const LandingPage = () => {
   return (
@@ -26,17 +28,24 @@ const LandingPage = () => {
         <HeroSection />
         <CategorySection />
         <HeritageSection />
-        <FeaturedCollections />
-        <BridalSection />
-        <MenKidsSection />
-        <BrandStorySection />
-        {/* <TrustSection /> */}
-        <BulkOrderSection />
-        <InstagramSection />
+        {/* <FeaturedCollections /> */}
+        <CollectionsGrid />
+        <HeritageSarees />
+        {/* <BridalSection /> */}
+        <SpecialMoments />
+        <Generations />
+        <BulkOrdersBox />
+        {/* <MenKidsSection /> */}
+        {/* <BrandStorySection /> */}
+        <DestinationStore />
+        <TrustSection />
+        {/* <BulkOrderSection /> */}
+        <GallerySection />
         <StoreSection />
         <FinalCTA />
       </main>
       <LandingFooter />
+      <ScrollToTop />
     </div>
   );
 };

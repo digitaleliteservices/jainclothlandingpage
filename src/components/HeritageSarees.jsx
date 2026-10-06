@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { useUI } from '../context/UIContext';
+import SareeBanner from "../assets/Show_saree_pattern_clearly_2K_20261006103945.jpg"
 
 const HeritageSarees = () => {
   const { openQuickView } = useUI();
@@ -71,7 +72,7 @@ const HeritageSarees = () => {
           <div className="heritage-visual-column">
             <div className="heritage-img-card">
               <img 
-                src="/assets/images/saree_detail_banner_1790677948638.jpg" 
+                src={SareeBanner} 
                 alt="Ilkal Saree Detail Macro View" 
                 className="heritage-showcase-img"
               />
@@ -85,19 +86,15 @@ const HeritageSarees = () => {
 
             {/* Bottom Specs & Button Bar */}
             <div className="heritage-bottom-bar">
-              <div className="spec-pills-row">
+              {/* <div className="spec-pills-row">
                 <span className="spec-pill">PALLU: RED & WHITE KONDI</span>
                 <span className="spec-pill">TEXTILE: PURE SILK & COTTON</span>
                 <span className="spec-pill">PROTECTION: GI CERTIFIED</span>
-              </div>
+              </div> */}
               <button 
                 className="btn btn-hero-primary" 
                 style={{ marginTop: '16px' }}
-                onClick={() => openQuickView({
-                  title: 'Ilkal Silk Sarees',
-                  desc: 'Traditional Karnataka Ilkal saree woven with pure mulberry silk warps and Topi Teni pallu.',
-                  image: '/assets/images/saree_detail_banner_1790677948638.jpg'
-                })}
+                onClick={()=> window.location.href = "#collections"}
               >
                 EXPLORE ILKAL COLLECTION
                 <ArrowRight size={14} />

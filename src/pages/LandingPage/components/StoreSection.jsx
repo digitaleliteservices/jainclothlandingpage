@@ -7,7 +7,7 @@ const StoreSection = () => {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919804882888?text=Namaste%20Jain%20Cloth%20Centre,%20I%20am%20planning%20to%20visit%20your%20Ilkal%20showroom.", "_blank");
+    window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20am%20planning%20to%20visit%20your%20Ilkal%20showroom.", "_blank");
   };
 
   return (
@@ -33,7 +33,7 @@ const StoreSection = () => {
           {/* Details Column */}
           <div className="landing-store-details">
             <span className="landing-store-badge">FLAGSHIP DESTINATION</span>
-            <h3 className="landing-store-name">Ilkal Heritage Showroom</h3>
+            <h3 className="landing-store-name">JAIN CLOTH CENTER</h3>
 
             <div className="landing-store-info-list">
               
@@ -53,7 +53,7 @@ const StoreSection = () => {
                 </div>
                 <div className="landing-store-info-text">
                   <strong>Business Hours:</strong>
-                  <p>Monday – Sunday: 10:00 AM – 9:00 PM <br/><span style={{ fontSize: '0.8rem', color: '#8B6D43' }}>(Open on all festive days)</span></p>
+                  <p>Monday – Sunday: 10:00 AM – 8:00 PM <br/><span style={{ fontSize: '0.8rem', color: '#8B6D43' }}>(Open on all festive days)</span></p>
                 </div>
               </div>
 
@@ -63,7 +63,7 @@ const StoreSection = () => {
                 </div>
                 <div className="landing-store-info-text">
                   <strong>Phone & WhatsApp:</strong>
-                  <p>+91 98048 82888</p>
+                  <p><a href="https://wa.me/919353977262" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>+91 93539 77262</a></p>
                 </div>
               </div>
 

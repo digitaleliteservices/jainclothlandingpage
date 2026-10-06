@@ -2,26 +2,23 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 
 const UIContext = createContext();
 
-const getInitialPage = () => {
-  if (typeof window === 'undefined') return 'home';
-  const path = window.location.pathname.replace(/\/$/, '');
-  if (path === '/landing' || path === '/jain-cloth-landing') return 'landing';
-  if (path === '/collections') return 'collections';
-  if (path === '/about') return 'about';
-  return 'home';
-};
-
 export const UIProvider = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState(getInitialPage); 
-  const [appointmentModalOpen, setAppointmentModalOpen] = useState(false);
-  const [bulkModalOpen, setBulkModalOpen] = useState(false);
+  const [currentPage, setCurrentPage] = useState('landing'); 
   const [searchModalOpen, setSearchModalOpen] = useState(false);
   const [quickViewItem, setQuickViewItem] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
 
   useEffect(() => {
+    // If user accesses /collections, /about, or any non-root path, clean to /
+    if (typeof window !== 'undefined' && window.location.pathname !== '/' && window.location.pathname !== '') {
+      window.history.replaceState(null, '', '/');
+    }
+
     const handlePopState = () => {
-      setCurrentPage(getInitialPage());
+      setCurrentPage('landing');
+      if (window.location.pathname !== '/' && window.location.pathname !== '') {
+        window.history.replaceState(null, '', '/');
+      }
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
@@ -42,17 +39,24 @@ export const UIProvider = ({ children }) => {
     setQuickViewItem(null);
   };
 
-  const navigateTo = (page) => {
-    setCurrentPage(page);
-    let path = '/';
-    if (page === 'landing') path = '/landing';
-    else if (page === 'collections') path = '/collections';
-    else if (page === 'about') path = '/about';
-
-    if (window.location.pathname !== path) {
-      window.history.pushState(null, '', path);
+  const navigateTo = (_page) => {
+    setCurrentPage('landing');
+    if (window.location.pathname !== '/' && window.location.pathname !== '') {
+      window.history.pushState(null, '', '/');
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const setAppointmentModalOpen = (open) => {
+    if (open) {
+      window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20book%20a%20store%20appointment%20and%20consultation.", "_blank");
+    }
+  };
+
+  const setBulkModalOpen = (open) => {
+    if (open) {
+      window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20have%20a%20bulk%20order%20inquiry.", "_blank");
+    }
   };
 
   return (
@@ -60,9 +64,9 @@ export const UIProvider = ({ children }) => {
       currentPage,
       setCurrentPage,
       navigateTo,
-      appointmentModalOpen,
+      appointmentModalOpen: false,
       setAppointmentModalOpen,
-      bulkModalOpen,
+      bulkModalOpen: false,
       setBulkModalOpen,
       searchModalOpen,
       setSearchModalOpen,

@@ -6,7 +6,7 @@ const Hero = () => {
   const { navigateTo } = useUI();
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919448100000?text=Hi%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20shop%20for%20ethnic%20wear", "_blank");
+    window.open("https://wa.me/919353977262?text=Hi%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20shop%20for%20ethnic%20wear", "_blank");
   };
 
   return (

@@ -6,11 +6,11 @@ const BulkOrderSection = () => {
   const { setBulkModalOpen } = useUI();
 
   const handleWhatsApp = () => {
-    window.open("https://wa.me/919448100000?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20enquire%20about%20a%20bulk%20order%20for%20our%20family%20event.", "_blank");
+    window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20enquire%20about%20a%20bulk%20order%20for%20our%20family%20event.", "_blank");
   };
 
   return (
-    <section className="landing-section-padding">
+    <section className="landing-section-padding" id="bulk-order-section">
       <div className="landing-container">
         <div className="landing-bulk-box">
           
@@ -33,8 +33,8 @@ const BulkOrderSection = () => {
               <span>Enquire on WhatsApp</span>
             </button>
 
-            <button className="landing-btn-primary" onClick={() => setBulkModalOpen(true)}>
-              <span>Bulk Request Form</span>
+            <button className="landing-btn-primary" onClick={handleWhatsApp}>
+              <span>Bulk Order Enquiry</span>
             </button>
           </div>
 

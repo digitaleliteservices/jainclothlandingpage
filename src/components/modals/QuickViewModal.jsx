@@ -28,13 +28,32 @@ const QuickViewModal = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <button 
                 className="btn btn-primary btn-sm" 
-                onClick={() => { closeQuickView(); setAppointmentModalOpen(true); }}
+                style={{ backgroundColor: '#25D366', color: '#FFFFFF', border: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}
+                onClick={() => {
+                  closeQuickView();
+                  const text = encodeURIComponent(`Namaste Jain Cloth Centre, I am inquiring about: ${quickViewItem.title}`);
+                  window.open(`https://wa.me/919353977262?text=${text}`, '_blank');
+                }}
+              >
+                Inquire on WhatsApp
+              </button>
+              <button 
+                className="btn btn-primary btn-sm" 
+                onClick={() => {
+                  closeQuickView();
+                  const text = encodeURIComponent(`Namaste Jain Cloth Centre, I would like to book a store visit and fitting for: ${quickViewItem.title}`);
+                  window.open(`https://wa.me/919353977262?text=${text}`, '_blank');
+                }}
               >
                 Book Store Visit & Fitting
               </button>
               <button 
                 className="btn btn-secondary btn-sm" 
-                onClick={() => { closeQuickView(); setBulkModalOpen(true); }}
+                onClick={() => {
+                  closeQuickView();
+                  const text = encodeURIComponent(`Namaste Jain Cloth Centre, I would like to inquire about a bulk order for: ${quickViewItem.title}`);
+                  window.open(`https://wa.me/919353977262?text=${text}`, '_blank');
+                }}
               >
                 Inquire Bulk Order
               </button>

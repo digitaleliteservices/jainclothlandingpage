@@ -23,42 +23,42 @@ export const categoryHierarchy = {
 export const categoriesData = [
   {
     id: 1,
-    title: 'Ilkal Sarees',
-    tag: 'MASTER CRAFT',
-    desc: 'Signature Chikki Paras & Topi Teni red-and-white pallu silk sarees handwoven by master artisans in Bagalkot.',
-    image: '/assets/images/cat_silk_saree_1790677798480.jpg',
-    categoryKey: 'ilkal'
+    title: 'Formal Essentials For Men',
+    tag: 'URBAN EDGE',
+    desc: 'Curated collection of crisp shirts, tailored trousers, and smart casuals designed for the modern professional.',
+    image: '/assets/images/cat_men_formal_1791279778274.jpg',
+    categoryKey: 'men'
   },
   {
     id: 2,
-    title: 'Bridal & Ethnic Wear',
-    tag: 'BRIDAL TROUSSEAU',
-    desc: 'Regal lehengas, banarasi silks, and ornate hand-embroidered ensembles crafted for memorable wedding rituals.',
-    image: '/assets/images/cat_bridal_lehenga_1790677826632.jpg',
-    categoryKey: 'bridal'
+    title: 'Everyday Essentials For Women',
+    tag: 'URBAN EDGE',
+    desc: 'Discover a curated selection of women’s everyday wear, featuring comfortable tops, versatile kurtis, and stylish casual wear.',
+    image: '/assets/images/cat_women_everyday.jpg',
+    categoryKey: 'women'
   },
   {
     id: 3,
-    title: "Women's Collection",
-    tag: 'EVERYDAY LUXURY',
-    desc: 'Graceful anarkalis, festive kurtas, designer dupattas, and contemporary ethnic wear tailored for comfort.',
-    image: '/assets/images/gen_women_1790678141932.jpg',
+    title: 'Fashion Forward Modern Styles',
+    tag: 'URBAN EDGE',
+    desc: 'Explore the latest trends in modern fashion with our new arrivals, featuring stylish and contemporary designs for every occasion.',
+    image: '/assets/images/cat_modern_styles.jpg',
     categoryKey: 'women'
   },
   {
     id: 4,
-    title: "Men's Collection",
-    tag: 'ROYAL ATTIRE',
-    desc: 'Royal silk kurtas, tailored bandhgalas, festive sherwanis, and lightweight ceremonial ethnic jackets.',
-    image: '/assets/images/cat_menswear_1790677869067.jpg',
-    categoryKey: 'men'
+    title: 'Festive Couture Celebration Wear',
+    tag: 'CELEBRATION WEAR',
+    desc: 'Discover a stunning collection of festive and celebration wear for men, women, and kids. Perfect for weddings, festivals, and special occasions.',
+    image: '/assets/images/cat_festive_couture.jpg',
+    categoryKey: 'bridal'
   },
   {
     id: 5,
-    title: "Kids' Collection",
-    tag: 'JOYFUL FESTIVE',
-    desc: 'Charming pattu pavadais, dhoti sets, and festive celebratory wear designed for delicate skin and easy movement.',
-    image: '/assets/images/cat_kids_1790677909697.jpg',
+    title: 'Mini Fashion Little Trendsetters',
+    tag: 'LITTLE TRENDSETTERS',
+    desc: 'Outfit the youngest members of your family in style with our charming collection of kids’ wear. Featuring playful designs and comfortable fabrics, perfect for every little personality and occasion.',
+    image: '/assets/images/cat_mini_fashion.jpg',
     categoryKey: 'kids'
   },
   {
@@ -66,7 +66,8 @@ export const categoriesData = [
     title: 'Family & Festive Wear',
     tag: 'COORDINATED SETS',
     desc: 'Color-coordinated celebration ensembles crafted to unite parents, grandparents, and youth in festive joy.',
-    image: '/assets/images/cat_family_1790677768539.jpg',
+    image: '/assets/images/cat_family_1791280968731.png',
+    objectPosition: 'center 20%',
     categoryKey: 'bulk'
   }
 ];
@@ -82,7 +83,7 @@ export const catalogProducts = [
     tag: 'GI Tag Certified',
     specs: 'Pure Silk × Kondi Warp',
     subtext: '6.25m with Blouse',
-    badge: 'Est. 1978 Series',
+    badge: 'Est. 1970 Series',
     desc: 'Pure mulberry silk body adorned with iconic white-and-red temple spearhead pallu and authentic Chikki Paras zari edging.',
     image: '/assets/images/prod_maroon_topi.jpg',
     occasion: 'Wedding Nuptials',

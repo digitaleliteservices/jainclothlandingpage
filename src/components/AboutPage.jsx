@@ -9,7 +9,7 @@ const AboutPage = () => {
   const { navigateTo, setAppointmentModalOpen } = useUI();
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919448100000?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20know%20more%20about%20your%20handloom%20heritage.", "_blank");
+    window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20know%20more%20about%20your%20handloom%20heritage.", "_blank");
   };
 
   return (
@@ -19,7 +19,7 @@ const AboutPage = () => {
       <section className="collections-top-subbar">
         <div className="container subbar-container">
           <div className="breadcrumb-nav">
-            <button onClick={() => navigateTo('home')} className="breadcrumb-link">Home</button>
+            <button onClick={() => navigateTo('landing')} className="breadcrumb-link">Home</button>
             <span className="sep">/</span>
             <span className="active">About Us</span>
           </div>
@@ -39,7 +39,7 @@ const AboutPage = () => {
           {/* Left Text Content */}
           <div className="about-hero-content">
             <div className="about-badge-tag">
-              ESTABLISHED 1978 • ILKAL, BAGALKOT DISTRICT
+              ESTABLISHED 1970 • ILKAL, BAGALKOT DISTRICT
             </div>
 
             <h1 className="about-main-headline">
@@ -47,7 +47,7 @@ const AboutPage = () => {
             </h1>
 
             <p className="about-main-lead">
-              In the heart of North Karnataka's historic handloom town of Ilkal, Jain Cloth Centre was founded upon a singular reverence: to preserve the living miracle of Kondi pit-loom weaving while dressing multi-generational families with timeless pride. What began as a modest weaver sanctuary in 1978 on Main Bazar Road has grown into a revered textile destination trusted by connoisseurs across India and the global diaspora.
+              In the heart of North Karnataka's historic handloom town of Ilkal, Jain Cloth Centre was founded upon a singular reverence: to preserve the living miracle of Kondi pit-loom weaving while dressing multi-generational families with timeless pride. What began as a modest weaver sanctuary in 1970 on Main Bazar Road has grown into a revered textile destination trusted by connoisseurs across India and the global diaspora.
             </p>
 
             <div className="about-hero-buttons">
@@ -95,7 +95,7 @@ const AboutPage = () => {
           <div className="metric-card">
             <strong className="metric-number">45+ <span className="metric-unit">yrs</span></strong>
             <strong className="metric-title">Continuous Heritage</strong>
-            <p className="metric-desc">Archival master weave house since 1978 without disruption.</p>
+            <p className="metric-desc">Archival master weave house since 1970 without disruption.</p>
           </div>
 
           <div className="metric-card">
@@ -348,7 +348,7 @@ const AboutPage = () => {
                 </button>
                 <button className="btn btn-whatsapp-outline" onClick={openWhatsApp}>
                   <MessageCircle size={15} />
-                  WHATSAPP DIRECT LINE: +91 9448100000
+                  WHATSAPP DIRECT LINE: +91 93539 77262
                 </button>
               </div>
             </div>
@@ -363,11 +363,11 @@ const AboutPage = () => {
                 </li>
                 <li>
                   <Clock size={16} className="icon-gold" />
-                  <span>Open 7 Days a Week: 10:00 AM to 9:00 PM IST</span>
+                  <span>Open 7 Days a Week: 10:00 AM to 8:00 PM IST</span>
                 </li>
                 <li>
                   <Phone size={16} className="icon-gold" />
-                  <span>+91 Store WhatsApp: +91 9448100000</span>
+                  <span>+91 Store WhatsApp: +91 93539 77262</span>
                 </li>
               </ul>
               <div className="hours-card-footer">

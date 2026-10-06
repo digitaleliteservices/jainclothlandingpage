@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShieldCheck, Award, Sparkles } from 'lucide-react';
+import JainClothesStore from "../../../assets/store.jpeg"
 
 const HeritageSection = () => {
   const scrollToFeatured = () => {
@@ -15,7 +16,7 @@ const HeritageSection = () => {
           {/* Left Column: Image Box */}
           <div className="landing-heritage-img-box">
             <img 
-              src="/assets/images/saree_detail_banner_1790677948638.jpg" 
+              src={JainClothesStore}
               alt="Ilkal Saree Craftsmanship Pallu" 
             />
           </div>
@@ -28,7 +29,7 @@ const HeritageSection = () => {
             </div>
 
             <h2 className="landing-section-headline">
-              The Heritage of Ilkal
+              The Legacy of Jain Cloth Centre
             </h2>
 
             <p className="landing-section-desc">
@@ -67,7 +68,7 @@ const HeritageSection = () => {
               </div>
             </div>
 
-            <button className="landing-btn-primary" onClick={scrollToFeatured}>
+            <button className="landing-btn-primary" onClick={()=> window.location.href = "#collections"}>
               Discover Ilkal Collection
             </button>
           </div>

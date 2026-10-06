@@ -26,7 +26,7 @@ const FinalCTA = () => {
           </p>
 
           <div style={{ display: 'flex', justifyContent: 'center', gap: '16px', flexWrap: 'wrap' }}>
-            <button className="landing-btn-primary" onClick={() => scrollToSection('landing-category-section')}>
+            <button className="landing-btn-primary" onClick={() => scrollToSection('collections')}>
               Explore Collections
             </button>
 

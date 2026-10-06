@@ -39,7 +39,10 @@ const SpecialMoments = () => {
             </li>
           </ul>
 
-          <button className="btn btn-olive-gold" onClick={() => setAppointmentModalOpen(true)}>
+          <button 
+            className="btn btn-olive-gold" 
+            onClick={() => window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20explore%20your%20Bridal%20Collection.", "_blank")}
+          >
             DISCOVER BRIDAL COLLECTION
             <ArrowRight size={14} />
           </button>

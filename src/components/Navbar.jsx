@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Camera, User, Menu, X } from 'lucide-react';
+import { User, Menu, X } from 'lucide-react';
 import { useUI } from '../context/UIContext';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileDrawerOpen, setMobileDrawerOpen] = useState(false);
-  const { currentPage, navigateTo, setAppointmentModalOpen, setSearchModalOpen } = useUI();
+  const { currentPage, navigateTo, setAppointmentModalOpen } = useUI();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,7 +34,7 @@ const Navbar = () => {
       <header className={`navbar ${scrolled ? 'scrolled' : ''}`} id="navbar">
         <div className="container navbar-container">
           
-          <a href="#home" className="navbar-brand" onClick={(e) => handleNavClick(e, 'home')}>
+          <a href="/" className="navbar-brand" onClick={(e) => handleNavClick(e, 'landing')}>
             <img src="/assets/images/logo.png" alt="Jain Cloth Centre Icon" className="brand-logo-img" />
             <span className="brand-title-serif">Jain Cloth Centre</span>
           </a>
@@ -43,9 +43,9 @@ const Navbar = () => {
             <ul className="nav-links">
               <li>
                 <a 
-                  href="#home" 
-                  className={`nav-link ${currentPage === 'home' ? 'active' : ''}`}
-                  onClick={(e) => handleNavClick(e, 'home')}
+                  href="/" 
+                  className={`nav-link ${currentPage === 'landing' || currentPage === 'home' ? 'active' : ''}`}
+                  onClick={(e) => handleNavClick(e, 'landing')}
                 >
                   Home
                 </a>
@@ -92,7 +92,7 @@ const Navbar = () => {
         <div className="mobile-nav-header">
           <div 
             style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
-            onClick={(e) => handleNavClick(e, 'home')}
+            onClick={(e) => handleNavClick(e, 'landing')}
           >
             <img src="/assets/images/logo.png" alt="Jain Cloth Centre" style={{ height: '32px' }} />
             <span className="brand-title-serif" style={{ fontSize: '1.1rem' }}>Jain Cloth Centre</span>
@@ -104,9 +104,9 @@ const Navbar = () => {
         <ul className="mobile-nav-links">
           <li>
             <a 
-              href="#home" 
-              className={`nav-link ${currentPage === 'home' ? 'active' : ''}`} 
-              onClick={(e) => handleNavClick(e, 'home')}
+              href="/" 
+              className={`nav-link ${currentPage === 'landing' || currentPage === 'home' ? 'active' : ''}`} 
+              onClick={(e) => handleNavClick(e, 'landing')}
             >
               Home
             </a>

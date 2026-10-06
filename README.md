@@ -1,20 +1,23 @@
 # 🏛️ Jain Cloth Centre - Heritage E-Commerce & Landing Platform
 
-> **40+ Years of Trusted Fashion • Heritage • Craftsmanship • Style**
+> **50+ Years of Trusted Fashion • Heritage • Craftsmanship • Style**
 
-Jain Cloth Centre is a modern web application built for the historic handloom & textile destination located in **Ilkal, Bagalkot District, Karnataka**. Founded in 1978, Jain Cloth Centre brings together centuries of Ilkal pit-loom saree weaving integrity, luxury bridal trousseaus, menswear, and family ethnic fashion.
+Jain Cloth Centre is a modern web application built for the historic handloom & textile destination located in **Ilkal, Bagalkot District, Karnataka**. Founded in 1970, Jain Cloth Centre brings together centuries of Ilkal pit-loom saree weaving integrity, luxury bridal trousseaus, menswear, and family ethnic fashion.
 
 ---
 
 ## 🚀 Key Features
 
 ### 1. Main Application
+
 - **Home Page (`/`)**: High-impact editorial hero banner, catalog grid, heritage sarees spotlight, special moments, multi-generational fashion stories, and location guide.
 - **Collections Page (`/collections`)**: Complete product catalog featuring hierarchical category navigation (Men, Women, Kids, Collections), product filtering, search, and quick view capabilities.
-- **About Us Page (`/about`)**: Story of 40+ years of handloom artistry, master artisan guilds (*Shri Basavaraj & Guild*, *Sunita Devi & Kasuti Circle*), brand pillars, and showroom atelier details.
+- **About Us Page (`/about`)**: Story of 50+ years of handloom artistry, master artisan guilds (_Shri Basavaraj & Guild_, _Sunita Devi & Kasuti Circle_), brand pillars, and showroom atelier details.
 
 ### 2. Standalone Landing Page (`/landing`)
+
 A fully isolated marketing landing page designed alongside the main site with zero style interference:
+
 - **Announcement Bar**: Burgundy header with subtle gold typography.
 - **Hero Section**: Editorial introduction with floating handloom sanctuary badge.
 - **Shop by Category**: Visual cards for Ilkal Sarees, Bridal Wear, Women, Men, and Kids.
@@ -27,6 +30,7 @@ A fully isolated marketing landing page designed alongside the main site with ze
 - **Burgundy & Gold Footer**: Custom footer with quick links and official social channels.
 
 ### 3. Interactive Modals & Concierge
+
 - 📅 **Appointment Modal**: Book in-person drape styling or virtual video consultations.
 - 📦 **Bulk Order Modal**: Submit bulk requests for wedding trousseaus and festive events.
 - 🔍 **Search Modal**: Instant search across sarees, bridal wear, and ethnic attire.
@@ -103,6 +107,7 @@ npm run dev
 ```
 
 Open your browser and navigate to:
+
 - Main Website: `http://localhost:5173/`
 - Collections Catalog: `http://localhost:5173/collections`
 - About Us Page: `http://localhost:5173/about`
@@ -125,7 +130,7 @@ The output files will be generated in the `dist/` directory.
 - **Flagship Showroom Address**:  
   Opposite SVM College, Bus Stand Road, Old Municipality Road, Ilkal, Bagalkot, Karnataka – 587125
 - **Phone & WhatsApp**: [+91 98048 82888](https://wa.me/919804882888)
-- **Showroom Hours**: Monday – Sunday: 10:00 AM – 9:00 PM (Open on all festive days)
+- **Showroom Hours**: Monday – Sunday: 10:00 AM – 8:00 PM (Open on all festive days)
 - **Official Socials**:
   - Instagram: [@jainclothcentre](https://www.instagram.com/jainclothcentre)
   - Facebook: [Jain Cloth Centre Ilkal](https://www.facebook.com/jainclothcentre.ilkal/)
@@ -136,4 +141,4 @@ The output files will be generated in the `dist/` directory.
 ## 📄 License
 
 © 2026 Jain Cloth Centre. All rights reserved.  
-*Authentic Handlooms • Bagalkot District • Karnataka Heritage*
+_Authentic Handlooms • Bagalkot District • Karnataka Heritage_

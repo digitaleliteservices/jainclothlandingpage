@@ -7,7 +7,7 @@ const StoreLocation = () => {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/919804882888?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20visit%20your%20Ilkal%20showroom.", "_blank");
+    window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20visit%20your%20Ilkal%20showroom.", "_blank");
   };
 
   return (
@@ -39,7 +39,7 @@ const StoreLocation = () => {
             </div>
 
             <h3 className="showroom-title">
-              Ilkal Heritage Showroom
+              Ilkal Heritage Showroomwwww
             </h3>
 
             <div className="location-details-list">
@@ -65,7 +65,7 @@ const StoreLocation = () => {
                 <div className="detail-text-box">
                   <strong className="detail-label">Business Hours:</strong>
                   <p className="detail-val">
-                    Monday – Sunday: 10:00 AM – 9:00 PM
+                    Monday – Sunday: 10:00 AM – 8:00 PM
                   </p>
                   <span className="detail-subtext">Open on all festive days</span>
                 </div>
@@ -79,7 +79,7 @@ const StoreLocation = () => {
                 <div className="detail-text-box">
                   <strong className="detail-label">Phone & WhatsApp:</strong>
                   <p className="detail-val">
-                    +91 98048 82888
+                    +91 93539 77262
                   </p>
                 </div>
               </div>
