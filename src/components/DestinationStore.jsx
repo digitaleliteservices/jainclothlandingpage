@@ -1,5 +1,6 @@
 import React from 'react';
 import { Store, Compass } from 'lucide-react';
+import store_interior from '../assets/jain-store.png';
 
 const DestinationStore = () => {
   return (
@@ -10,7 +11,7 @@ const DestinationStore = () => {
         <div className="destination-img-column">
           <div className="destination-img-wrap">
             <img 
-              src="/assets/images/store_interior.jpg" 
+              src={store_interior}
               alt="Jain Cloth Centre Showroom Interior" 
               className="destination-img" 
             />

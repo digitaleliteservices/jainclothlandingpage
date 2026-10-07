@@ -26,10 +26,14 @@ const Generations = () => {
           {/* Card 1: Men's Wardrobe */}
           <div 
             className="gen-family-card" 
-            onClick={() => window.open("https://wa.me/919353977262?text=Namaste%20Jain%20Cloth%20Centre,%20I%20would%20like%20to%20explore%20your%20Bridal%20Collection.", "_blank")}
+            onClick={() => openQuickView({
+              title: "Men's Wardrobe",
+              desc: "Fine silk kurtas, Modi sleeveless jackets, ceremonial silk dhotis, and crisp everyday linen white outfits for every family milestone.",
+              image: "/assets/images/gen_men_ethnic.jpg"
+            })}
           >
             <div className="gen-card-img-wrap">
-              <img src="/assets/images/gen_grandfather_1790678097286.jpg" alt="Men's Wardrobe" />
+              <img src="/assets/images/gen_men_ethnic.jpg" alt="Men's Wardrobe" />
             </div>
             <div className="gen-card-body">
               <span className="gen-card-tag">CRAFTED FOR DIGNITY</span>
@@ -49,11 +53,11 @@ const Generations = () => {
             onClick={() => openQuickView({
               title: "Women's Couture",
               desc: "Handloom sarees, designer salwar sets, festive ready-to-wear drapes, and exquisite unstitched suit lengths.",
-              image: "/assets/images/gen_mom_daughter.jpg"
+              image: "/assets/images/gen_womens_couture.jpg"
             })}
           >
             <div className="gen-card-img-wrap">
-              <img src="/assets/images/gen_mom_daughter.jpg" alt="Women's Couture" />
+              <img src="/assets/images/gen_womens_couture.jpg" alt="Women's Couture" className="gen-card-img-women" />
             </div>
             <div className="gen-card-body">
               <span className="gen-card-tag">ELEGANCE & GRACE</span>
@@ -73,11 +77,11 @@ const Generations = () => {
             onClick={() => openQuickView({
               title: "Kids' Festive Line",
               desc: "Soft pure silk lehengas, adorable mini kurtas, and hypoallergenic fabric blends specially curated for baby comfort and charm.",
-              image: "/assets/images/gen_children_1790678192067.jpg"
+              image: "/assets/images/gen_kids_festive.jpg"
             })}
           >
             <div className="gen-card-img-wrap">
-              <img src="/assets/images/gen_children_1790678192067.jpg" alt="Kids' Festive Line" />
+              <img src="/assets/images/gen_kids_festive.jpg" alt="Kids' Festive Line" className="gen-card-img-kids" />
             </div>
             <div className="gen-card-body">
               <span className="gen-card-tag">DELIGHTFUL MOMENTS</span>

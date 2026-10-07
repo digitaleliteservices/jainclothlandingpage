@@ -1,24 +1,77 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Eye, X, ChevronLeft, ChevronRight, MessageCircle, MapPin, ZoomIn } from 'lucide-react';
 
-// Dynamically load all 50+ photos from the assets/Gallery folder
-const galleryModules = import.meta.glob('../../../assets/Gallery/*.{png,jpg,jpeg,PNG,JPG,webp}', { eager: true, import: 'default' });
+// Dynamically load all photos from the assets/Gallery subfolders
+const galleryModules = import.meta.glob('../../../assets/Gallery/**/*.{png,jpg,jpeg,PNG,JPG,webp}', { eager: true, import: 'default' });
 
 const allGalleryImages = Object.entries(galleryModules).map(([path, src], index) => {
-  const fileName = path.split('/').pop().replace(/\.[^/.]+$/, "");
+  const parts = path.split(/[\/\\]/);
+  const fileNameWithExt = parts[parts.length - 1];
+  const fileName = fileNameWithExt.replace(/\.[^/.]+$/, "");
+  const folder = parts[parts.length - 2];
+  let category = (folder && folder !== 'Gallery') ? folder : 'Showcase';
+  if (category === 'Ilkal Sarees') {
+    category = 'Sarees';
+  }
+
   return {
     id: index + 1,
     img: src,
-    name: fileName
+    name: fileName,
+    category
   };
 });
 
+// Category display order
+const PREFERRED_CATEGORIES = [
+  'All',
+  'Sarees',
+  'Bridal & Ethnic Wear',
+  'Women\'s Collection',
+  'Men\'s Collection',
+  'Kids\' Collection',
+  'Family & Festive Wear'
+];
+
 const GallerySection = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [showAll, setShowAll] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
+  // Compute count of photos for each category
+  const categoryCounts = useMemo(() => {
+    return allGalleryImages.reduce((acc, item) => {
+      acc[item.category] = (acc[item.category] || 0) + 1;
+      return acc;
+    }, { All: allGalleryImages.length });
+  }, []);
+
+  // Ordered categories list
+  const categories = useMemo(() => {
+    const presentInOrder = PREFERRED_CATEGORIES.filter(
+      (cat) => cat === 'All' || (categoryCounts[cat] && categoryCounts[cat] > 0)
+    );
+    const extras = Object.keys(categoryCounts).filter(
+      (cat) => !PREFERRED_CATEGORIES.includes(cat)
+    );
+    return [...presentInOrder, ...extras];
+  }, [categoryCounts]);
+
+  // Filter images by selected category
+  const filteredImages = useMemo(() => {
+    if (selectedCategory === 'All') return allGalleryImages;
+    return allGalleryImages.filter((item) => item.category === selectedCategory);
+  }, [selectedCategory]);
+
   const initialCount = 16;
-  const visibleImages = showAll ? allGalleryImages : allGalleryImages.slice(0, initialCount);
+  const visibleImages = showAll ? filteredImages : filteredImages.slice(0, initialCount);
+
+  // When changing category, reset showAll and lightbox
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    setShowAll(false);
+    setLightboxIndex(null);
+  };
 
   // Keyboard navigation for lightbox
   useEffect(() => {
@@ -46,8 +99,12 @@ const GallerySection = () => {
     setLightboxIndex((prev) => (prev < visibleImages.length - 1 ? prev + 1 : 0));
   };
 
-  const handleWhatsAppInquire = (imageName) => {
-    const text = encodeURIComponent(`Namaste Jain Cloth Centre, I would like to inquire about this outfit from your gallery: ${imageName || 'Showcase piece'}`);
+  const handleWhatsAppInquire = (item) => {
+    const name = typeof item === 'object' ? item.name : item;
+    const cat = typeof item === 'object' ? item.category : selectedCategory;
+    const text = encodeURIComponent(
+      `Namaste Jain Cloth Centre, I would like to inquire about this outfit from your ${cat !== 'All' ? cat : 'Showcase'} gallery: ${name || 'Showcase piece'}`
+    );
     window.open(`https://wa.me/919353977262?text=${text}`, '_blank');
   };
 
@@ -77,6 +134,26 @@ const GallerySection = () => {
           </p>
         </div>
 
+        {/* Category Filter Pills */}
+        <div className="landing-gallery-categories" role="tablist" aria-label="Gallery categories">
+          {categories.map((category) => {
+            const count = categoryCounts[category] || 0;
+            const isActive = selectedCategory === category;
+            return (
+              <button
+                key={category}
+                role="tab"
+                aria-selected={isActive}
+                className={`landing-gallery-cat-btn ${isActive ? 'active' : ''}`}
+                onClick={() => handleCategorySelect(category)}
+              >
+                <span>{category}</span>
+                <span className="landing-gallery-cat-count">{count}</span>
+              </button>
+            );
+          })}
+        </div>
+
         {/* Gallery Grid */}
         <div className="landing-gallery-grid">
           {visibleImages.map((item, idx) => (
@@ -84,19 +161,22 @@ const GallerySection = () => {
               key={item.id} 
               className="landing-gallery-item" 
               onClick={() => setLightboxIndex(idx)} 
-              title="Click to view full photo"
+              title={`View ${item.category} photo`}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => { if (e.key === 'Enter') setLightboxIndex(idx); }}
             >
               <img 
                 src={item.img} 
-                alt={`Jain Cloth Centre Gallery - ${item.name}`} 
+                alt={`Jain Cloth Centre - ${item.category} - ${item.name}`} 
                 loading="lazy" 
               />
+              <span className="landing-gallery-item-cat">
+                {item.category}
+              </span>
               <div className="landing-gallery-overlay">
                 <div className="landing-gallery-overlay-badge">
-                  <ZoomIn size={20} />
+                  <ZoomIn size={18} />
                   <span>View Photo</span>
                 </div>
               </div>
@@ -105,14 +185,17 @@ const GallerySection = () => {
         </div>
 
         {/* Toggle View All / Show Less */}
-        {allGalleryImages.length > initialCount && (
+        {filteredImages.length > initialCount && (
           <div style={{ textAlign: 'center', marginTop: '36px' }}>
             <button 
               className="landing-btn-secondary" 
               onClick={() => setShowAll(!showAll)}
               style={{ padding: '12px 32px', fontSize: '0.95rem', fontWeight: 600, letterSpacing: '0.5px' }}
             >
-              {showAll ? 'Show Less' : `View All Photos (${allGalleryImages.length})`}
+              {showAll 
+                ? 'Show Less' 
+                : `View All ${selectedCategory === 'All' ? '' : selectedCategory + ' '}Photos (${filteredImages.length})`
+              }
             </button>
           </div>
         )}
@@ -141,7 +224,7 @@ const GallerySection = () => {
 
               <img 
                 src={visibleImages[lightboxIndex].img} 
-                alt={`Jain Cloth Centre Showcase ${lightboxIndex + 1}`} 
+                alt={`Jain Cloth Centre ${visibleImages[lightboxIndex].category} ${lightboxIndex + 1}`} 
                 className="landing-gallery-lightbox-img" 
               />
 
@@ -156,12 +239,17 @@ const GallerySection = () => {
 
               {/* Lightbox Footer Bar */}
               <div className="landing-gallery-lightbox-footer">
-                <span className="landing-gallery-lightbox-counter">
-                  Photo {lightboxIndex + 1} of {visibleImages.length}
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
+                  <span className="landing-gallery-lightbox-cat">
+                    {visibleImages[lightboxIndex].category}
+                  </span>
+                  <span className="landing-gallery-lightbox-counter">
+                    Photo {lightboxIndex + 1} of {visibleImages.length}
+                  </span>
+                </div>
 
                 <button 
-                  onClick={() => handleWhatsAppInquire(visibleImages[lightboxIndex].name)}
+                  onClick={() => handleWhatsAppInquire(visibleImages[lightboxIndex])}
                   className="landing-btn-whatsapp-nav"
                   style={{ padding: '9px 18px', fontSize: '0.85rem' }}
                 >
@@ -182,7 +270,7 @@ const GallerySection = () => {
           <div className="landing-gallery-inquiry-actions">
             <button 
               className="landing-btn-whatsapp-nav"
-              onClick={() => handleWhatsAppInquire('Designs seen in showcase gallery')}
+              onClick={() => handleWhatsAppInquire(`Designs seen in ${selectedCategory} gallery`)}
             >
               <MessageCircle size={18} />
               <span>Inquire on WhatsApp (+91 93539 77262)</span>

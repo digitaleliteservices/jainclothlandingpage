@@ -1,6 +1,8 @@
 import React from 'react';
 import { Gem, Sparkles, Palette, ArrowRight } from 'lucide-react';
 import { useUI } from '../context/UIContext';
+import momentBridal from '../assets/Change_clothing_on_model_2K_20261006104056.jpg';
+import momentGroom from '../assets/Couple_walking_at_outdoor_wedding_2K_20261006145650.jpg';
 
 const SpecialMoments = () => {
   const { setAppointmentModalOpen, openQuickView } = useUI();
@@ -57,10 +59,10 @@ const SpecialMoments = () => {
             onClick={() => openQuickView({
               title: 'The Heritage Bride',
               desc: 'Heirloom handloom silk sarees with handcrafted gold zari for grand weddings.',
-              image: '/assets/images/moment_bridal_1790677986942.jpg'
+              image: momentBridal
             })}
           >
-            <img src="/assets/images/moment_bridal_1790677986942.jpg" alt="The Heritage Bride" />
+            <img src={momentBridal} alt="The Heritage Bride" />
             <div className="moment-card-overlay">
               <strong className="moment-card-title">The Heritage Bride</strong>
               <span className="moment-card-sub">Heirloom Handloom Silks</span>
@@ -73,10 +75,10 @@ const SpecialMoments = () => {
             onClick={() => openQuickView({
               title: 'Ceremonial Royalty',
               desc: 'Bespoke groomsmen sherwanis, bandhgalas and wedding attire.',
-              image: '/assets/images/moment_groom_1790678030005.jpg'
+              image: momentGroom
             })}
           >
-            <img src="/assets/images/moment_groom_1790678030005.jpg" alt="Ceremonial Royalty" />
+            <img src={momentGroom} alt="Ceremonial Royalty" />
             <div className="moment-card-overlay">
               <strong className="moment-card-title">Ceremonial Royalty</strong>
               <span className="moment-card-sub">Bespoke Sherwanis & Suits</span>

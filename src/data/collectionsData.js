@@ -236,19 +236,19 @@ export const generationsData = [
     id: 1,
     title: "Men's Collection",
     desc: "Classic Nehru jackets, kurtas, and dignified ethnic wear for seniors & gentlemen.",
-    image: "/assets/images/gen_grandfather_1790678097286.jpg"
+    image: "/assets/images/gen_men_ethnic.jpg"
   },
   {
     id: 2,
     title: "Women's Collection",
     desc: "Rich silk sarees, designer lehengas, and festive ethnic wear for modern women.",
-    image: "/assets/images/gen_mom_daughter.jpg"
+    image: "/assets/images/gen_womens_couture.jpg"
   },
   {
     id: 3,
     title: "Kids Collection",
     desc: "Vibrant, comfortable ethnic sets, dhotis, and lehenga cholis for children.",
-    image: "/assets/images/gen_children_1790678192067.jpg"
+    image: "/assets/images/gen_kids_festive.jpg"
   }
 ];
 
